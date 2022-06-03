@@ -82,3 +82,13 @@ button{
     border:none;
     color:white;
 }  
+nav a{
+    text-decoration:none;
+    color:black;
+    word-spacing:2px;
+    letter-spacing:1px;
+}
+header h1{
+    letter-spacing:2px;
+    word-spacing:2px;
+}

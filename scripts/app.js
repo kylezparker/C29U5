@@ -1,10 +1,14 @@
 // constructor
-function User(email,password,fname,lname,age){
+function User(email,password,fname,lname,age,address,phone,payment,color){
     this.email=email;
     this.password=password;
     this.firstName=fname;
     this.lastName=lname;
     this.age=age;
+    this.address=address;
+    this.phone=phone;
+    this.payment=payment;
+    this.color=color;
     }
     //register function
     function register(){
@@ -13,10 +17,16 @@ function User(email,password,fname,lname,age){
         let userFirstName= $("#txtFirstName").val();
         let userLastName= $("#txtLastName").val();
         let userAge= $("#txtAge").val();
+        let userAddress= $("#txtAddress").val();
+        let userPhone= $("#txtPhone").val();
+        let userPayment= $("#txtPayment").val();
+        let userColor= $("#txtColor").val();
     
-        console.log(userName,userPass,userFirstName,userLastName);
+        // email,password,first name,last name,age,address,phone,payment,color
+    
+        console.log(userName,userPass,userFirstName,userLastName,userAge,userAddress,userPhone,userPayment,userColor);
         // creating the object
-        let newUser=new User(userName,userPass,userFirstName,userLastName,userAge);
+        let newUser=new User(userName,userPass,userFirstName,userLastName,userAge,userAddress,userPhone,userPayment,userColor);
         $('input').val("");
         console.log(newUser);
     }
