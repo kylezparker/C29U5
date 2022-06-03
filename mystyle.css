@@ -10,11 +10,13 @@ body{
     justify-content:space-around;
     align-items:center;
     height:30vh;
-    background-color:#d03000;
+    /* background-color:#d03000; */
+    background-color:darkorchid;
     color:black;
 }
 .site-init h1{
-    font-weight:300;
+    letter-spacing:2px;
+    word-spacing:2px;
 }
 .site-init nav a{
     color:black;
@@ -59,7 +61,8 @@ main .login-container{
     justify-content:space-around;
     align-items:center;
     height:10vh;
-    background-color:#d03000;
+    
+    background-color:darkorchid;
     color:black;
 }
 .form-container{
@@ -82,13 +85,18 @@ button{
     border:none;
     color:white;
 }  
-nav a{
+/* nav a{
     text-decoration:none;
     color:black;
     word-spacing:2px;
     letter-spacing:1px;
-}
+} */
 header h1{
     letter-spacing:2px;
     word-spacing:2px;
+}
+.site-register nav a{
+    color:black;
+    text-decoration:none;
+    margin-right:2rem;
 }
