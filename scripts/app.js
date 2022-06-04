@@ -10,7 +10,8 @@ function User(email,password,fname,lname,age,address,phone,payment,color){
     this.payment=payment;
     this.color=color;
     }
-    let users=[];
+    // let users=[];
+
     //register function
     function register(){
         let userName= $("#txtEmail").val();
@@ -41,23 +42,39 @@ function User(email,password,fname,lname,age,address,phone,payment,color){
     function init(){
     console.log("reg");
     //hook events
-    $("#btnRegister").click(register2);
+    $("#btnRegister").click(register);
     
     }
     window.onload=init;
 
 
-    // practice. register function without jquery, must also clear form with jquery.
-    function register2(){
-        let userName=document.getElementById("txtEmail").value;
-        // repeat ^ then 
-        let user1=new User(userName,1,1,1,1,1,1,1,1);
-        users.push(user1);
-        console.log(users);
-        clearForm();
-    }
-    function clearForm(){
-        document.getElementById("txtEmail").value=``;
-        // repeat
+    // // practice. register function without jquery, must also clear form with jquery.
+    // function register2(){
+    //     let userName=document.getElementById("txtEmail").value;
+    //     // repeat ^ then 
+    //     let user1=new User(userName,1,1,1,1,1,1,1,1);
+    //     users.push(user1);
+    //     console.log(users);
+    //     clearForm();
+    // }
+    // function clearForm(){
+    //     document.getElementById("txtEmail").value=``;
+    //     // repeat
 
-    }
+    // }
+
+
+
+
+
+    // // email,password,first name,last name,age,address,phone,payment,color
+    // function register3(){
+    //     let userName=$(`#txtEmail`).val();
+    //     let userFirstName=$(`#txtFirstName`).val();
+    //     let userLastName=$(`#txtLastName`).val();
+    //     let user1=new User(userName,1,userFirstName,userLastName,1,1,1,1,1);
+    //     console.log(user1);
+    //     $(`input`).val(``);
+
+        
+    // }
