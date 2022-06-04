@@ -3,7 +3,7 @@
     padding:0;
 }
 body{
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:Arial, Helvetica, sans-serif;  
 }
 .site-init{
     display:flex;
@@ -40,6 +40,7 @@ main .login-container{
     width:20rem;
     padding:1rem;
     margin:1rem;
+    /* border-radius:15%; */
 }
 .login-container input{
     width:15rem;
@@ -99,4 +100,11 @@ header h1{
     color:black;
     text-decoration:none;
     margin-right:2rem;
+}
+main label{
+    font-size:25px;
+    font-weight:550;
+}
+div.form-container h2{
+    text-align:center;
 }
