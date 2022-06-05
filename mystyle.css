@@ -9,7 +9,8 @@ body{
     display:flex;
     justify-content:space-around;
     align-items:center;
-    height:30vh;
+    /* height:30vh; */
+    height:10vh;
     /* background-color:#d03000; */
     background-color:darkorchid;
     color:black;
