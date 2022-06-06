@@ -12,6 +12,35 @@ function User(email,password,fname,lname,age,address,phone,payment,color){
     }
     // let users=[];
 
+        function isValid(user){
+            //return false when user is not valid, return true when user is valid
+            let valid=true;
+            if(user.email.length==0){
+                valid=false;
+                console.log("please fill out the field: email");
+                $("#txtEmail").addClass(`input-error`);
+            }
+            if(user.password.length==0){
+                valid=false;
+                console.log("please fill out the field: password");
+                $("#txtPassword").addClass(`input-error`);
+
+            }
+            if(user.firstName.length==0){
+                valid=false;
+                console.log("please fill out the field: first name");
+                $("#txtFirstName").addClass(`input-error`);
+
+            }
+            if(user.lastName.length==0){
+                valid=false;
+                console.log("please fill out the field: last name");
+                $("#txtLastName").addClass(`input-error`);
+
+            }
+            return valid;
+        }
+        // user.password=="" test for empty
     //register function
     function register(){
         let userName= $("#txtEmail").val();
@@ -26,11 +55,18 @@ function User(email,password,fname,lname,age,address,phone,payment,color){
     
         // email,password,first name,last name,age,address,phone,payment,color
     
-        console.log(userName,userPass,userFirstName,userLastName,userAge,userAddress,userPhone,userPayment,userColor);
+        // console.log(userName,userPass,userFirstName,userLastName,userAge,userAddress,userPhone,userPayment,userColor);
         // creating the object
         let newUser=new User(userName,userPass,userFirstName,userLastName,userAge,userAddress,userPhone,userPayment,userColor);
-        $('input').val("");
-        console.log(newUser);
+        if(isValid(newUser)==true){
+            $('input').val("");
+            // console.log(newUser);
+            saveUser(newUser);
+            // maybe target ids in function called clearError to deal with issue
+            $("input").addClass(`input-clear`)
+        }
+       
+      
     }
     
     
@@ -43,9 +79,16 @@ function User(email,password,fname,lname,age,address,phone,payment,color){
     console.log("reg");
     //hook events
     $("#btnRegister").click(register);
-    
-    }
+    $("#txtColor").keypress(function(e){
+        if(e.key=="Enter"){
+            register();
+        }
+        // console.log(e.key);
+    });
+}
     window.onload=init;
+
+    // shorthand. $("#txtEmail").hide() vs document.get......style.display="none"
 
 
     // // practice. register function without jquery, must also clear form with jquery.
@@ -78,3 +121,6 @@ function User(email,password,fname,lname,age,address,phone,payment,color){
 
         
     // }
+
+
+    //apply what we have been learning to petSalon

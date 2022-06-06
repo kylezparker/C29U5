@@ -109,3 +109,9 @@ main label{
 div.form-container h2{
     text-align:center;
 }
+.input-error{
+    border:1px solid red;
+}
+.input-clear{
+    border:1px solid black;
+}
