@@ -10,7 +10,7 @@ function User(email,password,fname,lname,age,address,phone,payment,color){
     this.payment=payment;
     this.color=color;
     }
-    // let users=[];
+ 
 
         function isValid(user){
             //return false when user is not valid, return true when user is valid
@@ -40,6 +40,7 @@ function User(email,password,fname,lname,age,address,phone,payment,color){
             }
             return valid;
         }
+        
         // user.password=="" test for empty
     //register function
     function register(){
@@ -58,10 +59,12 @@ function User(email,password,fname,lname,age,address,phone,payment,color){
         // console.log(userName,userPass,userFirstName,userLastName,userAge,userAddress,userPhone,userPayment,userColor);
         // creating the object
         let newUser=new User(userName,userPass,userFirstName,userLastName,userAge,userAddress,userPhone,userPayment,userColor);
+        
         if(isValid(newUser)==true){
+            saveUser(newUser);
             $('input').val("");
             // console.log(newUser);
-            saveUser(newUser);
+          
             // maybe target ids in function called clearError to deal with issue
             $("input").addClass(`input-clear`)
         }
