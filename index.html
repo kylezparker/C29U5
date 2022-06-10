@@ -20,16 +20,21 @@
 
     <main>
         
-        <label>Login</label>
+        
         <div class="login-container">
-            <input type="text" id="txtUserName" placeholder="Enter your username">
+            <label>Login</label>
+            <p class="alert-error hide" id="alertError">here are the errors</p>
+            <input type="text" id="txtEmail" placeholder="Enter your email">
             <input type="password" id="txtPassword" placeholder="Enter your password">
-            <button>Login</button>
+            <button id="btnLogin">Login</button>
+            <a href="/register.html">Not a user?</a>
         </div>
         
 
        
     </main>
-    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="scripts/storeManager.js"></script>
+    <script src="scripts/login.js"></script>
 </body>
 </html>

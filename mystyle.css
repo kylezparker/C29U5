@@ -166,3 +166,11 @@ div.form-container h2{
 .input-clear{
     border:1px solid black;
 }
+.alert-error{
+    border:1px solid darkred;
+    color:darkred;
+    background-color:pink;
+}
+.hide{
+    display:none;
+}

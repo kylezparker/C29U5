@@ -14,13 +14,14 @@ function User(email,password,fname,lname,age,address,phone,payment,color){
 
         function isValid(user){
             //return false when user is not valid, return true when user is valid
+            //remove console logs
             let valid=true;
             if(user.email.length==0){
                 valid=false;
                 console.log("please fill out the field: email");
                 $("#txtEmail").addClass(`input-error`);
             }
-            if(user.password.length==0){
+            if(user.password.length<6){
                 valid=false;
                 console.log("please fill out the field: password");
                 $("#txtPassword").addClass(`input-error`);
@@ -52,6 +53,7 @@ function User(email,password,fname,lname,age,address,phone,payment,color){
         let userAddress= $("#txtAddress").val();
         let userPhone= $("#txtPhone").val();
         let userPayment= $("#txtPayment").val();
+        // try docbyId
         let userColor= $("#txtColor").val();
     
         // email,password,first name,last name,age,address,phone,payment,color
@@ -59,17 +61,50 @@ function User(email,password,fname,lname,age,address,phone,payment,color){
         // console.log(userName,userPass,userFirstName,userLastName,userAge,userAddress,userPhone,userPayment,userColor);
         // creating the object
         let newUser=new User(userName,userPass,userFirstName,userLastName,userAge,userAddress,userPhone,userPayment,userColor);
-        
+        // if(validatePass(userPass)){
         if(isValid(newUser)==true){
             saveUser(newUser);
             $('input').val("");
             // console.log(newUser);
-          
+            hideError();
             // maybe target ids in function called clearError to deal with issue
             $("input").addClass(`input-clear`)
+        }else{
+            displayError("Please complete all fields");
         }
-       
+    }
+    function displayError(msg){
+        $("#alertError").removeClass("hide").text(msg);
+    }
+    function hideError(){
+        $("#alertError").addClass("hide");
+    }
       
+    
+
+    function validatePass(){
+        //get the value of the pass
+        console.log("validateing")
+
+        let txtPass=$("#txtPassword");
+        // console.log(txtPass);
+        let password=txtPass.val();
+        if(password.length<6){
+            txtPass.css("background","#ff9898");
+            console.log("the password is too short");
+            displayError("the password is too short");
+        }else{
+            txtPass.css("background","#64cc66");
+            hideError();
+
+        }
+        // if(pass.length < 6){
+        //     console.log("lengthen password")
+        // }
+        // else{
+        //     return true;
+        // }
+        //test against parameters
     }
     
     
@@ -88,6 +123,7 @@ function User(email,password,fname,lname,age,address,phone,payment,color){
         }
         // console.log(e.key);
     });
+    $("#txtPassword").keyup(validatePass);//val every time key is up
 }
     window.onload=init;
 
